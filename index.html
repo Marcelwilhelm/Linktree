@@ -10,13 +10,13 @@
 <body>
   <div class="glow-orb"></div>
   <div class="wrap">
-    <div class="avatar">🚑</div>
+    <div class="avatar"><img src="img/profile.jpg" alt="Marcel Wilhelm"></div>
     <div class="handle">@marcelxwilhelm</div>
     <div class="badge">🧡 Notfallsanitäter &amp; Creator</div>
     <div class="bio">Alle wichtigsten Links auf einen Blick – Rettungsdienst-Content, Bücher &amp; mehr 🚑🌍</div>
 
     <div class="links">
-      <a class="link featured" href="https://shr.pn/m9Mw" target="_blank" rel="noopener">
+      <a class="link flash" href="https://shr.pn/m9Mw" target="_blank" rel="noopener">
         <span class="emoji">📓</span>
         <span class="label">Tagebücher für alle aus der Blaulichtfamilie</span>
         <span class="arrow">↗</span>
@@ -75,5 +75,19 @@
       <a href="https://www.vybebrothers.com/imprint" target="_blank" rel="noopener">Impressum</a> · © 2026 Marcel Wilhelm
     </div>
   </div>
+  <script>
+    // Kurzes Aufleuchten beim Antippen (funktioniert auch im Instagram-Browser).
+    // Klappt es nicht, bleibt der Link einfach im normalen Design – kein Dauer-Leuchten.
+    document.querySelectorAll('.link.flash').forEach(function(el){
+      var timer;
+      function flash(){
+        el.classList.add('is-active');
+        clearTimeout(timer);
+        timer = setTimeout(function(){ el.classList.remove('is-active'); }, 350);
+      }
+      el.addEventListener('touchstart', flash, {passive:true});
+      el.addEventListener('mousedown', flash);
+    });
+  </script>
 </body>
 </html>

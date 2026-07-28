@@ -53,6 +53,13 @@ body{
   margin-bottom:16px;
   position:relative;
   z-index:1;
+  overflow:hidden;
+}
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 .handle{
   font-size:20px;
@@ -128,19 +135,12 @@ a.link .arrow{
   transition:transform .18s ease;
 }
 a.link:hover .arrow{transform:translateX(3px);opacity:0.9;}
-a.featured{
+a.flash.is-active{
   background:linear-gradient(135deg, rgba(255,122,26,0.9), rgba(255,157,66,0.85));
   border:1px solid rgba(255,255,255,0.25);
   color:#1a0c02;
   box-shadow:0 10px 28px rgba(255,122,26,0.4);
-}
-a.featured .label{font-weight:800;}
-a.featured .sub{
-  display:block;
-  font-weight:500;
-  font-size:12.5px;
-  opacity:0.85;
-  margin-top:2px;
+  transition:background .15s ease, box-shadow .15s ease, color .15s ease, border-color .15s ease;
 }
 .divider{
   width:100%;
