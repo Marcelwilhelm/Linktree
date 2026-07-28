@@ -1,0 +1,170 @@
+:root{
+  --bg-1:#160a04;
+  --bg-2:#2b1206;
+  --orange-1:#ff7a1a;
+  --orange-2:#ff9d42;
+  --orange-3:#ffb877;
+  --card:rgba(255,255,255,0.06);
+  --card-border:rgba(255,154,66,0.35);
+  --text:#fff3ea;
+  --text-dim:#e7c3a8;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  min-height:100vh;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255,122,26,0.35), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(255,157,66,0.25), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(255,122,26,0.20), transparent 50%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2) 60%, #0d0602);
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  padding:0 0 60px;
+  -webkit-tap-highlight-color:transparent;
+}
+.wrap{
+  width:100%;
+  max-width:460px;
+  padding:48px 20px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.glow-orb{
+  position:fixed;
+  width:280px;height:280px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,140,40,0.45), transparent 70%);
+  filter:blur(10px);
+  top:-90px;right:-90px;
+  z-index:0;
+  pointer-events:none;
+}
+.avatar{
+  width:104px;height:104px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:40px;
+  background:linear-gradient(145deg, var(--orange-1), #ffcf9c);
+  box-shadow:0 0 0 4px rgba(255,255,255,0.08), 0 10px 30px rgba(255,122,26,0.35);
+  margin-bottom:16px;
+  position:relative;
+  z-index:1;
+}
+.handle{
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:0.2px;
+  margin:2px 0 6px;
+  z-index:1;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-size:11px;
+  color:var(--orange-2);
+  background:rgba(255,122,26,0.12);
+  border:1px solid rgba(255,122,26,0.4);
+  padding:3px 10px;
+  border-radius:999px;
+  margin-bottom:14px;
+}
+.bio{
+  text-align:center;
+  color:var(--text-dim);
+  font-size:14.5px;
+  line-height:1.5;
+  max-width:340px;
+  margin-bottom:28px;
+  z-index:1;
+}
+.links{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:1;
+}
+a.link{
+  text-decoration:none;
+  color:var(--text);
+  background:var(--card);
+  border:1px solid var(--card-border);
+  backdrop-filter:blur(6px);
+  padding:16px 18px;
+  border-radius:16px;
+  font-size:15px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+a.link::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(255,122,26,0.18), transparent 60%);
+  opacity:0;
+  transition:opacity .18s ease;
+}
+a.link:active{transform:scale(0.97);}
+a.link:hover{
+  border-color:var(--orange-2);
+  box-shadow:0 6px 20px rgba(255,122,26,0.25);
+}
+a.link:hover::before{opacity:1;}
+a.link .emoji{font-size:20px;flex-shrink:0;}
+a.link .label{flex:1;line-height:1.35;}
+a.link .arrow{
+  opacity:0.5;
+  font-size:16px;
+  transition:transform .18s ease;
+}
+a.link:hover .arrow{transform:translateX(3px);opacity:0.9;}
+a.featured{
+  background:linear-gradient(135deg, rgba(255,122,26,0.9), rgba(255,157,66,0.85));
+  border:1px solid rgba(255,255,255,0.25);
+  color:#1a0c02;
+  box-shadow:0 10px 28px rgba(255,122,26,0.4);
+}
+a.featured .label{font-weight:800;}
+a.featured .sub{
+  display:block;
+  font-weight:500;
+  font-size:12.5px;
+  opacity:0.85;
+  margin-top:2px;
+}
+.divider{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:22px 0 4px;
+  color:var(--text-dim);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  z-index:1;
+}
+.divider::before,.divider::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:rgba(255,255,255,0.12);
+}
+.footer{
+  margin-top:36px;
+  text-align:center;
+  font-size:11.5px;
+  color:rgba(231,195,168,0.55);
+  z-index:1;
+}
+.footer a{color:var(--orange-3);text-decoration:none;}
