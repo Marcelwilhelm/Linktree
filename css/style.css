@@ -128,6 +128,8 @@ a.link:hover{
 }
 a.link:hover::before{opacity:1;}
 a.link .emoji{font-size:20px;flex-shrink:0;}
+a.link .emoji-logo{width:48px;display:flex;align-items:center;}
+a.link .emoji-logo img{width:100%;height:auto;display:block;}
 a.link .label{flex:1;line-height:1.35;}
 a.link .arrow{
   opacity:0.5;
